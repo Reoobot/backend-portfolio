@@ -2,15 +2,23 @@ import Layout from "@/components/Layout";
 import { useState } from "react";
 import axios from 'axios'
 
+import { useRouter } from "next/router";
+
 export default function NewProject(){
     const[title,setTitle] = useState('');
     const [description,setDescription] = useState('');
     const [web,setWeb] = useState('');
+    const [goToprojects,setGoToProjects] = useState(false)
+    const router = useRouter();
 
     async function createProject(ev) {
         ev.preventDefault()
         const data = {title,description,web}
         await axios.post('/api/projects', data)
+        setGoToProjects(true);
+    }
+    if (goToprojects){
+        router.push('/projects')
     }
     return(
         <Layout>
