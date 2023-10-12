@@ -16,10 +16,21 @@
     }
 
     if(method === 'POST') {
-        const {title,description,web} = req.body;
+        const {title,description,web,images} = req.body;
         const projectDoc = await Project.create({
-            title,description,web,
+            title,description,web,images,
         })
         res.json(projectDoc)
+    }
+    if(method === 'PUT') {
+        const {title,description,web,images,_id} = req.body;
+        await Project.updateOne({_id}, {title,description,web,images});
+        res.json(true)
+    }
+    if(method === 'DELETE') {
+        if(req.query?.id) {
+            await Project.deleteOne({_id:req.query?.id});
+            res.json(true);
+        }
     }
     }

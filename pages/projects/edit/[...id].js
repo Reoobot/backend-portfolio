@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 export default function EditProject() {
     const [projectInfo,setProjectInfo] = useState(null);
     const router = useRouter();
-    console.log('mio', router);
     const {id} = router.query;
-    console.log('papa',{id});
     useEffect(()=> {
         if(!id) {
             return;
