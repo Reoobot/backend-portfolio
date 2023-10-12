@@ -1,6 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+// next.config.js
+module.exports = {
+  reactStrictMode: true, // Otras configuraciones de Next.js, si las tienes
 
-module.exports = nextConfig
+  images: {
+    domains: ['lh3.googleusercontent.com'], // Agrega 'lh3.googleusercontent.com' a la lista de dominios permitidos
+  },
+};
