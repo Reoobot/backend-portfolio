@@ -1,8 +1,8 @@
 // next.config.js
 module.exports = {
-  reactStrictMode: true, // Otras configuraciones de Next.js, si las tienes
+  reactStrictMode: true, 
 
   images: {
-    domains: ['lh3.googleusercontent.com'], // Agrega 'lh3.googleusercontent.com' a la lista de dominios permitidos
+    domains: ['lh3.googleusercontent.com', 'portafolio.s3.amazonaws.com']
   },
 };
