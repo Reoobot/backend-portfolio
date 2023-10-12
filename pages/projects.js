@@ -25,7 +25,7 @@ export default function Projects(){
                 </thead>
                 <tbody>
                     {projects.map(project =>(
-                        <tr>
+                        <tr key={project._id}>
                             <td>{project.title}</td>
                             <td>
                                 <Link href={'/projects/edit/'+project._id}>

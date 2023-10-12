@@ -2,6 +2,8 @@
 import { useState } from "react";
 import axios from 'axios'
 import { useRouter } from "next/router";
+import Image from 'next/image';
+
 
 
 export default function ProjectForm({
@@ -59,9 +61,10 @@ export default function ProjectForm({
                     </label>
                     <div className="mb-2 flex flex-wrap gap-2">
                         {!!images?.length && images.map(link =>(
-                            <div key={link} className="h-24">
-                               <img src={link} alt="" className="rounded-lg"/>
-                            </div>
+                           <div key={link} className="h-24">
+                             <Image src={link} alt="" className="rounded-lg" width={300} height={200} />
+                           </div>
+                       
                         ))}
                         <label className="cursor-pointer w-24 h-24 border text-center flex items-center justify-center text-sm gap-1 text-gray-500 roudend-lg bg-gray-200">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
